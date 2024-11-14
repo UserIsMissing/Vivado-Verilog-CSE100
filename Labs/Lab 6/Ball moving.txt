@@ -1,0 +1,108 @@
+`timescale 1ns / 1ps
+
+
+module Balls_Moving(
+    input clk, btnU, btnR, btnL,
+    input [15:0] Hpixel, Vpixel,
+    input frame,
+
+    output MemBlue, MemRed, // Blue and Red Membranes
+    output [3:0] vgaRed, vgaGreen, vgaBlue,
+
+    output [3:0] MakeBall1, MakeBall2, MakeBall3, MakeBall4, MakeBall5, MakeBall6, MakeBall7, MakeBall8,
+    output [4:0] NS
+    );
+    wire [4:0] PS;
+
+    wire [15:0] BallEdgeLeft, BallEdgeRight, TopEdge, BottomEdge;
+    // Top left corner of ball is (0,0) so need to subtract 16 from left side of membrane to see when it touches the right side of the ball
+    assign BallEdgeLeft = 16'd300;       // Ball left edge when touching membrane left edge
+    assign BallEdgeRight = 16'd323;      // Ball right edge when touching membrane right edge
+    assign TopEdge = 16'd8;         // Edge of top border
+    assign BottomEdge = 16'd471;    // Edge of bottom border
+
+    // Invisible membrane, No membrane, Purple membrane
+    wire MemInvis, MemNone, MemPurp;
+    assign MemInvis = (Hpixel >= 16'd316) & (Hpixel <= 16'd323) & (Vpixel <= 16'd471) & (Vpixel >= 16'd8);
+    assign MemNone =  (MemInvis & btnR & btnL);
+    assign MemPurp =  (MemInvis & ~btnR & ~btnL);
+    assign MemBlue =  (MemInvis & ~btnL);
+    assign MemRed =   (MemInvis & ~btnR);
+
+
+    wire MemLeftRed, MemLeftBlue, MemLeftPurp, MemRightRed, MemRightBlue, MemRightPurp;
+    /////////////////////////        Making Ball sizing stuff        \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+                wire [15:0] Posx [0:7];     // Make 8 wires of 16 bits each. Could also do [7:0], that order doesnt matter
+                wire [15:0] Posy [0:7];
+    assign MemLeftRed =     ((Posx[0] == 16'd300) & (Posx[1] == 16'd300) & (Posx[2] == 16'd300) & (Posx[3] == 16'd300) & (Posx[4] == 16'd300) & (Posx[5] == 16'd300) & (Posx[6] == 16'd300) & (Posx[7] == 16'd300)) & MemRed;
+    assign MemRightRed =    ((Posx[0] == 16'd323) & (Posx[1] == 16'd323) & (Posx[2] == 16'd323) & (Posx[3] == 16'd323) & (Posx[4] == 16'd323) & (Posx[5] == 16'd323) & (Posx[6] == 16'd323) & (Posx[7] == 16'd323)) & MemRed;
+    assign MemLeftPurp =    ((Posx[0] == 16'd300)  & (Posx[1] == 16'd300)  & (Posx[2] == 16'd300)  & (Posx[3] == 16'd300)  & (Posx[4] == 16'd300)  & (Posx[5] == 16'd300)  & (Posx[6] == 16'd300)  & (Posx[7] == 16'd300))  & MemPurp;
+        
+        wire Count [7:0], Upx [7:0], Upy [7:0], Downx [7:0], Downy [7:0];
+        wire Top, Bottom, Left, Right;
+    
+    assign Top =    (Posy[0] == 16'd8) & (Posy[1] == 16'd8) & (Posy[2] == 16'd8) & (Posy[3] == 16'd8) & (Posy[4] == 16'd8) & (Posy[5] == 16'd8) & (Posy[6] == 16'd8) & (Posy[7] == 16'd8);
+    // 455 because ball top left corner is (0,0) so subtract 16 from bottom border edge
+    assign Bottom = (Posy[0] == 16'd455) & (Posy[1] == 16'd455) & (Posy[2] == 16'd455) & (Posy[3] == 16'd455) & (Posy[4] == 16'd455) & (Posy[5] == 16'd455) & (Posy[6] == 16'd455) & (Posy[7] == 16'd455);
+    // | MemRightBlue);
+    assign Left =   ((Posx[0] == 16'd8) & (Posx[1] == 16'd8) & (Posx[2] == 16'd8) & (Posx[3] == 16'd8) & (Posx[4] == 16'd8) & (Posx[5] == 16'd8) & (Posx[6] == 16'd8) & (Posx[7] == 16'd8)) | (MemRightRed | MemRightPurp);
+    // | MemLeftBlue);      // 608 because ball top left corner is (0,0) so subtract 16 from right border edge (640-16-16=608)
+    assign Right =  ((Posx[0] == 16'd608) & (Posx[1] == 16'd608) & (Posx[2] == 16'd608) & (Posx[3] == 16'd608) & (Posx[4] == 16'd608) & (Posx[5] == 16'd608) & (Posx[6] == 16'd608) & (Posx[7] == 16'd608)) | (MemLeftRed | MemLeftPurp);     
+
+
+
+
+        Counter_16Bit Ball1x (.clk(clk), .UP(Upx[0] & frame), .DW(Downx[0] & frame), .LD(Count[0]), .sw(16'd100), .Q(Posx[0]));
+        Counter_16Bit Ball1y (.clk(clk), .UP(Upy[0] & frame), .DW(Downy[0] & frame), .LD(Count[0]), .sw(16'd100), .Q(Posy[0]));
+
+
+
+
+
+        Counter_16Bit Ball2x (.clk(clk), .UP(Upx[1] & frame), .DW(Downx[1] & frame), .LD(Count[1]), .sw(16'd200), .Q(Posx[1]));
+        Counter_16Bit Ball2y (.clk(clk), .UP(Upy[1] & frame), .DW(Downy[1] & frame), .LD(Count[1]), .sw(16'd200), .Q(Posy[1]));
+
+        Counter_16Bit Ball3x (.clk(clk), .UP(Upx[2] & frame), .DW(Downx[2] & frame), .LD(Count[2]), .sw(16'd300), .Q(Posx[2]));
+        Counter_16Bit Ball3y (.clk(clk), .UP(Upy[2] & frame), .DW(Downy[2] & frame), .LD(Count[2]), .sw(16'd300), .Q(Posy[2]));
+
+        Counter_16Bit Ball4x (.clk(clk), .UP(Upx[3] & frame), .DW(Downx[3] & frame), .LD(Count[3]), .sw(16'd400), .Q(Posx[3]));
+        Counter_16Bit Ball4y (.clk(clk), .UP(Upy[3] & frame), .DW(Downy[3] & frame), .LD(Count[3]), .sw(16'd400), .Q(Posy[3]));
+
+
+    //----------------------- Making Ball #1 -----------------------\\ (Red)
+    Ball MakinBall_1 (.clk(clk), .Go(btnU), .Top(Top), .Bottom(Bottom), .Left(Left), .Right(Right), 
+                        .Count(Count[0]), .Upx(Upx[0]), .Upy(Upy[0]), .Downx(Downx[0]), .Downy(Downy[0]), .NS(NS[0]));
+    assign MakeBall1 = ((Posx[0] <= Hpixel) & (Hpixel <= Posx[0] + 16'd16) & (Posy[0] <= Vpixel) & (Vpixel <= Posy[0] + 16'd16));
+    //----------------------- Making Ball #2 -----------------------\\ (Red)
+    Ball MakinBall_2 (.clk(clk), .Go(btnU), .Top(Top), .Bottom(Bottom), .Left(Left), .Right(Right), 
+                        .Count(Count[1]), .Upx(Upx[1]), .Upy(Upy[1]), .Downx(Downx[1]), .Downy(Downy[1]), .NS(NS[1]));
+    assign MakeBall2 = ((Posx[1] <= Hpixel) & (Hpixel <= Posx[1] + 16'd16) & (Posy[1] <= Vpixel) & (Vpixel <= Posy[1] + 16'd16));
+    //----------------------- Making Ball #3 -----------------------\\ (Red)
+    Ball MakinBall_3 (.clk(clk), .Go(btnU), .Top(Top), .Bottom(Bottom), .Left(Left), .Right(Right), 
+                        .Count(Count[2]), .Upx(Upx[2]), .Upy(Upy[2]), .Downx(Downx[2]), .Downy(Downy[2]), .NS(NS[2]));
+    assign MakeBall3 = ((Posx[2] <= Hpixel) & (Hpixel <= Posx[2] + 16'd16) & (Posy[2] <= Vpixel) & (Vpixel <= Posy[2] + 16'd16));
+    //----------------------- Making Ball #4 -----------------------\\ (Red)
+    Ball MakinBall_4 (.clk(clk), .Go(btnU), .Top(Top), .Bottom(Bottom), .Left(Left), .Right(Right), 
+                        .Count(Count[3]), .Upx(Upx[3]), .Upy(Upy[3]), .Downx(Downx[3]), .Downy(Downy[3]), .NS(NS[3]));
+    assign MakeBall4 = ((Posx[3] <= Hpixel) & (Hpixel <= Posx[3] + 16'd16) & (Posy[3] <= Vpixel) & (Vpixel <= Posy[3] + 16'd16));
+
+    //----------------------- Making Ball #5 -----------------------\\ (Blue)
+    Ball MakinBall_5 (.clk(clk), .Go(btnU), .Top(Top), .Bottom(Bottom), .Left(Left), .Right(Right), 
+                        .Count(Count[4]), .Upx(Upx[4]), .Upy(Upy[4]), .Downx(Downx[4]), .Downy(Downy[4]), .NS(NS[4]));
+    assign MakeBall5 = ((Posx[4] <= Hpixel) & (Hpixel <= Posx[4] + 16'd16) & (Posy[4] <= Vpixel) & (Vpixel <= Posy[4] + 16'd16));
+    //----------------------- Making Ball #6 -----------------------\\ (Blue)
+    Ball MakinBall_6 (.clk(clk), .Go(btnU), .Top(Top), .Bottom(Bottom), .Left(Left), .Right(Right), 
+                        .Count(Count[5]), .Upx(Upx[5]), .Upy(Upy[5]), .Downx(Downx[5]), .Downy(Downy[5]), .NS(NS[5]));
+    assign MakeBall6 = ((Posx[5] <= Hpixel) & (Hpixel <= Posx[5] + 16'd16) & (Posy[5] <= Vpixel) & (Vpixel <= Posy[5] + 16'd16));
+    //----------------------- Making Ball #7 -----------------------\\ (Blue)
+    Ball MakinBall_7 (.clk(clk), .Go(btnU), .Top(Top), .Bottom(Bottom), .Left(Left), .Right(Right), 
+                        .Count(Count[6]), .Upx(Upx[6]), .Upy(Upy[6]), .Downx(Downx[6]), .Downy(Downy[6]), .NS(NS[6]));
+    assign MakeBall7 = ((Posx[6] <= Hpixel) & (Hpixel <= Posx[6] + 16'd16) & (Posy[6] <= Vpixel) & (Vpixel <= Posy[6] + 16'd16));
+    //----------------------- Making Ball #8 -----------------------\\ (Blue)
+    Ball MakinBall_8 (.clk(clk), .Go(btnU), .Top(Top), .Bottom(Bottom), .Left(Left), .Right(Right), 
+                        .Count(Count[7]), .Upx(Upx[7]), .Upy(Upy[7]), .Downx(Downx[7]), .Downy(Downy[7]), .NS(NS[7]));
+    assign MakeBall8 = ((Posx[7] <= Hpixel) & (Hpixel <= Posx[7] + 16'd16) & (Posy[7] <= Vpixel) & (Vpixel <= Posy[7] + 16'd16));                                                                        
+
+
+endmodule    

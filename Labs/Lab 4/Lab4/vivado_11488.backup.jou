@@ -1,0 +1,103 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Nov  2 16:27:28 2023
+# Process ID: 11488
+# Current directory: C:/Users/cole_admin/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4984
+# Log file: C:/Users/cole_admin/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/cole_admin/AppData/Roaming/Xilinx/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/cole_admin/Desktop/School Work/CSE 100/Lab 4/Lab4_4.xpr/Lab4/Lab4.xpr}
+launch_simulation
+launch_simulation
+source TopLevelSim.tcl
+relaunch_sim
+relaunch_sim
+current_wave_config {Untitled 1}
+add_wave {{/TopLevelSim/UUT/an}} 
+current_wave_config {Untitled 1}
+add_wave {{/TopLevelSim/UUT/Ring_out}} 
+current_wave_config {Untitled 1}
+add_wave {{/TopLevelSim/UUT/FlashSc}} 
+current_wave_config {Untitled 1}
+add_wave {{/TopLevelSim/UUT/Time}} 
+relaunch_sim
+run all
+relaunch_sim
+run 10 us
+current_wave_config {Untitled 1}
+add_wave {{/TopLevelSim/UUT/target}} 
+relaunch_sim
+run 10 us
+run 10 us
+current_wave_config {Untitled 1}
+add_wave {{/TopLevelSim/UUT/RandNumGen}} 
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+current_wave_config {Untitled 1}
+add_wave {{/TopLevelSim/UUT/LDTarget}} 
+relaunch_sim
+run 10 us
+run 10 us
+current_wave_config {Untitled 1}
+add_wave {{/TopLevelSim/UUT/THE_BRAIN}} 
+relaunch_sim
+run 10 us
+run 10 us
+current_wave_config {Untitled 1}
+add_wave {{/TopLevelSim/UUT/THE_BRAIN/Go}} 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/cole_admin/Desktop/School Work/CSE 100/Lab 4/Lab4_4.xpr/Lab4/Lab4.runs/impl_1/Top_Level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/cole_admin/Desktop/School Work/CSE 100/Lab 4/Lab4_4.xpr/Lab4/Lab4.runs/impl_1/Top_Level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/cole_admin/Desktop/School Work/CSE 100/Lab 4/Lab4_4.xpr/Lab4/Lab4.runs/impl_1/Top_Level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/cole_admin/Desktop/School Work/CSE 100/Lab 4/Lab4_4.xpr/Lab4/Lab4.runs/impl_1/Top_Level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/cole_admin/Desktop/School Work/CSE 100/Lab 4/Lab4_4.xpr/Lab4/Lab4.runs/impl_1/Top_Level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+archive_project {C:/Users/cole_admin/Desktop/School Work/CSE 100/Lab 4/Lab4_FINAL.xpr.zip} -temp_dir C:/Users/cole_admin/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-11488-CP -force -include_local_ip_cache -include_config_settings

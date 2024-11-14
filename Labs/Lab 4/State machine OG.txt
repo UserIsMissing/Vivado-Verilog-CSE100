@@ -1,0 +1,42 @@
+module State_Machine(
+    input Go, Pick, TimeUp, Match,
+    output LDTarget, IncSc, DecSc, ShowTarget, FlashSc, FlashLED, LEDon, RstTime
+    );
+    wire [4:0] prevState, nextState;
+    
+    // Initialize everything to 0
+    assign Go = 1'b0;
+    assign Pick = 1'b0;
+    assign TimeUp = 1'b0;
+    assign Match = 1'b0;
+    
+    // Assign states with one hot
+//    Chill
+    assign nextState[0] = (prevState[0] & ~Go) | (prevState[3] & TimeUp) | (prevState[4] & TimeUp);
+//    Generate #
+    assign nextState[1] = (prevState[0] & Go) | (prevState[1] & ~TimeUp);
+//    LED rotation
+    assign nextState[2] = (prevState[1] & TimeUp) | (prevState[2] & ~Pick);
+//    Win
+    assign nextState[3] = (prevState[2] & Pick & Match) | (prevState[3] & ~TimeUp);
+//    Lose
+    assign nextState[4] = (prevState[2] & Pick & ~Match) | (prevState[4] & ~TimeUp);
+    
+    // Assign outputs
+    assign RstTime = TimeUp;
+    assign LDTarget = prevState[0] & Go;
+    assign IncSc = prevState[3];
+    assign DecSc = prevState[4];
+    assign ShowTarget = prevState[1];
+    assign FlashSc = prevState[3];                  // Flash Score when you win
+    assign FlashLED = prevState[4];         // When you pick
+    assign LEDon = prevState[2];
+    
+    FDRE #(.INIT(1'b1)) FF_SM0 (.C(clk), .CE(1'b1), .D(nextState[0]), .Q(Display));
+    FDRE #(.INIT(1'b1)) FF_SM1 (.C(clk), .CE(1'b1), .D(Display), .Q(LED_rotate));
+    FDRE #(.INIT(1'b1)) FF_SM2 (.C(clk), .CE(1'b1), .D(LED_rotate), .Q(Win));
+    FDRE #(.INIT(1'b1)) FF_SM3 (.C(clk), .CE(1'b1), .D(LED_rotate), .Q(Lose));
+    FDRE #(.INIT(1'b1)) FF_SM4 (.C(clk), .CE(1'b1), .D(Win), .Q(Chill));
+    FDRE #(.INIT(1'b1)) FF_SM5 (.C(clk), .CE(1'b1), .D(Lose), .Q(Chill));
+
+endmodule

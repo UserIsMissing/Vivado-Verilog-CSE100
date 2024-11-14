@@ -1,0 +1,23 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Lab4.srcs/sources_1/new/Decoder.v" \
+"../../../../Lab4.srcs/sources_1/new/LFSR.v" \
+"../../../../Lab4.srcs/sources_1/new/MoveLEDs.v" \
+"../../../../Lab4.srcs/sources_1/imports/sources_1/new/Ring_Counter.v" \
+"../../../../Lab4.srcs/sources_1/imports/sources_1/new/Selector.v" \
+"../../../../Lab4.srcs/sources_1/new/State_Machine.v" \
+"../../../../Lab4.srcs/sources_1/imports/sources_1/new/countUD4L.v" \
+"../../../../Lab4.srcs/sources_1/imports/sources_1/imports/new/hex7seg.v" \
+"../../../../Lab4.srcs/sources_1/imports/Downloads/qsec_clks.v" \
+"../../../../Lab4.srcs/sources_1/new/Top_Level.v" \
+"../../../../Lab4.srcs/sources_1/imports/new/Edge_Detector.v" \
+"../../../../Lab4.srcs/sim_1/new/MoveLEDs_SIM.v" \
+"../../../../Lab4.srcs/sim_1/new/StateMachine_SIM.v" \
+"../../../../Lab4.srcs/sim_1/new/Prelab_test_bench.v" \
+"../../../../Lab4.srcs/sim_1/new/TopLevelSim.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

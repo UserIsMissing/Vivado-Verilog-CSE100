@@ -1,0 +1,17 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.sim/sim_1/behav/xsim/glbl.v,1700000518,verilog,,,,glbl,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sim_1/new/State_Machine_SIM.v,1700000518,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sim_1/new/Top_Level_SIM.v,,State_Machine_SIM,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sim_1/new/Top_Level_SIM.v,1700109710,verilog,,,,Top_Level_SIM,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/new/Counter_16Bit.v,1700008184,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sim_1/new/State_Machine_SIM.v,,Counter_16Bit,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/new/Edge_Detector.v,1700000518,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/new/Counter_16Bit.v,,Edge_Detector,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/imports/Downloads/qsec_clks.v,1700000518,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/new/Edge_Detector.v,,clk_wiz_0;clkcntrl4;count4_MSCLK_clkcntrl4;qsec_clks,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/imports/new/hex7seg.v,1700000518,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/imports/Downloads/qsec_clks.v,,hex7seg,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/new/Ring_Counter.v,1700000518,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/new/Selector.v,,Ring_Counter,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/new/Selector.v,1700000518,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/new/State_Machine.v,,Selector,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/new/countUD4L.v,1700008176,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/imports/new/hex7seg.v,,countUD4L,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/new/LFSR.v,1700000518,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/new/Ring_Counter.v,,LFSR,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/new/State_Machine.v,1700125550,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/new/Top_Level.v,,State_Machine,,,,,,,,
+C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/new/Top_Level.v,1700114167,verilog,,C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 5/Lab5/Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/new/countUD4L.v,,Top_Level,,,,,,,,

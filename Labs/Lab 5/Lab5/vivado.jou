@@ -1,0 +1,66 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Nov 14 14:21:01 2023
+# Process ID: 9144
+# Current directory: C:/Users/cole_admin/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7748
+# Log file: C:/Users/cole_admin/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/cole_admin/AppData/Roaming/Xilinx/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/cole_admin/Desktop/School Work/CSE 100/Lab5/Lab5/Lab5.xpr}
+launch_simulation
+launch_simulation
+launch_simulation
+source Top_Level_SIM.tcl
+current_wave_config {Untitled 1}
+add_wave {{/Top_Level_SIM/UUT/PS}} {{/Top_Level_SIM/UUT/NS}} 
+relaunch_sim
+run 100 us
+run 1000 us
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_sim
+launch_simulation
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+synth_design -rtl -name rtl_1
+close_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+archive_project {C:/Users/cole_admin/Desktop/School Work/CSE 100/Lab5/Lab5_4.xpr.zip} -temp_dir C:/Users/cole_admin/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9144-CP -force -include_local_ip_cache -include_config_settings

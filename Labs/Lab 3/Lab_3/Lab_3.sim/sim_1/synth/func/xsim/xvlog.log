@@ -1,0 +1,36 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/synth/func/xsim/testTC_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CB4CE_MXILINX_clkcntrl4
+INFO: [VRFC 10-311] analyzing module CB4CE_MXILINX_clkcntrl4_1
+INFO: [VRFC 10-311] analyzing module CB4CE_MXILINX_clkcntrl4_2
+INFO: [VRFC 10-311] analyzing module CB4CE_MXILINX_clkcntrl4_3
+INFO: [VRFC 10-311] analyzing module Counter_16Bit
+INFO: [VRFC 10-311] analyzing module Edge_Detector
+INFO: [VRFC 10-311] analyzing module Edge_Detector_0
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_10
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_11
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_12
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_13
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_14
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_15
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_16
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_17
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_18
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_4
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_5
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_6
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_7
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_8
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_9
+INFO: [VRFC 10-311] analyzing module Ring_Counter
+INFO: [VRFC 10-311] analyzing module Top_Level
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-311] analyzing module clkcntrl4
+INFO: [VRFC 10-311] analyzing module countUD4L
+INFO: [VRFC 10-311] analyzing module countUD4L_19
+INFO: [VRFC 10-311] analyzing module countUD4L_20
+INFO: [VRFC 10-311] analyzing module countUD4L_21
+INFO: [VRFC 10-311] analyzing module labCnt_clks
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.srcs/sim_1/imports/Downloads/testTC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testTC

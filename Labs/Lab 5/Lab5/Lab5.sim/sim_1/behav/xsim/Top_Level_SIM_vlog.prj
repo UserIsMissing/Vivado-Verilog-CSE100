@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Lab5.srcs/sources_1/imports/sources_1/new/LFSR.v" \
+"../../../../Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/new/Ring_Counter.v" \
+"../../../../Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/new/Selector.v" \
+"../../../../Lab5.srcs/sources_1/new/State_Machine.v" \
+"../../../../Lab5.srcs/sources_1/new/Top_Level.v" \
+"../../../../Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/new/countUD4L.v" \
+"../../../../Lab5.srcs/sources_1/imports/sources_1/imports/sources_1/imports/new/hex7seg.v" \
+"../../../../Lab5.srcs/sources_1/imports/sources_1/imports/Downloads/qsec_clks.v" \
+"../../../../Lab5.srcs/sources_1/imports/new/Edge_Detector.v" \
+"../../../../Lab5.srcs/sources_1/imports/new/Counter_16Bit.v" \
+"../../../../Lab5.srcs/sim_1/new/State_Machine_SIM.v" \
+"../../../../Lab5.srcs/sim_1/new/Top_Level_SIM.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

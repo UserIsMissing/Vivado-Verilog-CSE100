@@ -1,0 +1,222 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Oct 22 19:43:10 2023
+# Process ID: 17936
+# Current directory: C:/Users/Cole/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9880
+# Log file: C:/Users/Cole/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/Cole/AppData/Roaming/Xilinx/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Oct 22 19:44:39 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B312CEA
+set_property PROGRAM.FILE {C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.runs/impl_1/Top_Level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.runs/impl_1/Top_Level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+launch_simulation
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/behav/xsim/simulate.log"
+launch_simulation
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/behav/xsim/simulate.log"
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in 'C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.srcs/constrs_1/imports/Downloads/Basys3_Master.xdc]
+Finished Parsing XDC File [C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.srcs/constrs_1/imports/Downloads/Basys3_Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2285.824 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 2405.188 ; gain = 448.457
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/synth/func/xsim/testTC_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/synth/func/xsim/testTC_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'testTC' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/synth/func/xsim'
+"xvlog --incr --relax -prj testTC_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/synth/func/xsim/testTC_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CB4CE_MXILINX_clkcntrl4
+INFO: [VRFC 10-311] analyzing module CB4CE_MXILINX_clkcntrl4_1
+INFO: [VRFC 10-311] analyzing module CB4CE_MXILINX_clkcntrl4_2
+INFO: [VRFC 10-311] analyzing module CB4CE_MXILINX_clkcntrl4_3
+INFO: [VRFC 10-311] analyzing module Counter_16Bit
+INFO: [VRFC 10-311] analyzing module Edge_Detector
+INFO: [VRFC 10-311] analyzing module Edge_Detector_0
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_10
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_11
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_12
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_13
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_14
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_15
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_16
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_17
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_18
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_4
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_5
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_6
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_7
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_8
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4_9
+INFO: [VRFC 10-311] analyzing module Ring_Counter
+INFO: [VRFC 10-311] analyzing module Top_Level
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-311] analyzing module clkcntrl4
+INFO: [VRFC 10-311] analyzing module countUD4L
+INFO: [VRFC 10-311] analyzing module countUD4L_19
+INFO: [VRFC 10-311] analyzing module countUD4L_20
+INFO: [VRFC 10-311] analyzing module countUD4L_21
+INFO: [VRFC 10-311] analyzing module labCnt_clks
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.srcs/sim_1/imports/Downloads/testTC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testTC
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/synth/func/xsim'
+"xelab -wto 45fe64ca5a4f458cb5f70d16de9ec614 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot testTC_func_synth xil_defaultlib.testTC xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 45fe64ca5a4f458cb5f70d16de9ec614 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot testTC_func_synth xil_defaultlib.testTC xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module xil_defaultlib.Edge_Detector
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module xil_defaultlib.Edge_Detector_0
+Compiling module unisims_ver.OBUF
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.LUT6
+Compiling module xil_defaultlib.countUD4L
+Compiling module xil_defaultlib.countUD4L_19
+Compiling module xil_defaultlib.countUD4L_20
+Compiling module xil_defaultlib.countUD4L_21
+Compiling module xil_defaultlib.Counter_16Bit
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module xil_defaultlib.Ring_Counter
+Compiling module unisims_ver.STARTUPE2
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=9.125...
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module unisims_ver.FDCE_default
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_15
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_16
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_17
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_18
+Compiling module xil_defaultlib.CB4CE_MXILINX_clkcntrl4
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_11
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_12
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_13
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_14
+Compiling module xil_defaultlib.CB4CE_MXILINX_clkcntrl4_1
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_7
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_8
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_9
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_10
+Compiling module xil_defaultlib.CB4CE_MXILINX_clkcntrl4_2
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_4
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_5
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4_6
+Compiling module xil_defaultlib.CB4CE_MXILINX_clkcntrl4_3
+Compiling module xil_defaultlib.clkcntrl4
+Compiling module xil_defaultlib.labCnt_clks
+Compiling module xil_defaultlib.Top_Level
+Compiling module xil_defaultlib.testTC
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testTC_func_synth
+
+****** Webtalk v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Cole/Desktop/UCSC/CSE -notrace
+invalid command name "%"
+    while executing
+"% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current"
+    (file "C:/Users/Cole/Desktop/UCSC/CSE" line 1)
+INFO: [Common 17-206] Exiting Webtalk at Sun Oct 22 19:49:57 2023...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "testTC_func_synth -key {Post-Synthesis:sim_1:Functional:testTC} -tclbatch {testTC.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source testTC.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'testTC_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:43 ; elapsed = 00:00:27 . Memory (MB): peak = 2885.176 ; gain = 928.445
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3/Lab_3.sim/sim_1/behav/xsim/simulate.log"
+archive_project {C:/Users/Cole/Desktop/UCSC/CSE 100/Labs/Lab 3/Lab_3_7.xpr.zip} -temp_dir C:/Users/Cole/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-17936-DESKTOP-P5I79LF -force -include_local_ip_cache -include_config_settings
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/Users/Cole/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-17936-DESKTOP-P5I79LF' for archiving project
+Scanning sources...
+Finished scanning sources
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [ProjectBase 1-495] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience any problem with archiving the project, please consider setting environment variable $TEMP to a shorter path.
+Current project path is 'C:/Users/Cole/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-17936-DESKTOP-P5I79LF/PrjAr/_X_'.
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'sim_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sim_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
